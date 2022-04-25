@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <div id="positivo" style="display:none">
+
+    </div>
+    <div id="negativo" style="display:none">
+
+    </div>
+    <p id="numeros"></p>
+    <button type="button" onclick="primcheck2()" name="button">boton</button>
+    <script src="primoscheck.js"></script>
+
+    <!--<script type="text/javascript">
+      var num;
+      var text = "";
+      for(num = 1;num <=100; num++){
+        if(num ){
+
+        }
+        text += num + ", ";
+      }
+      document.getElementById("numeros").innerHTML = text;
+
+    </script>-->
+    <!--<script type="text/javascript">
+    var numlimit = 100;
+    var numx = 1;
+    var numerosPrimos = [];
+
+    for (; numx < numlimit; numx++) {
+
+      if (primo(numx)) {
+        numerosPrimos.push(numx);
+      }
+
+    }
+
+    console.log(numerosPrimos);
+
+    function primo(numero) {
+
+      for (var i = 2; i < numero; i++) {
+        if (numero % i == 0) {
+          return false;
+        }
+
+
+      }
+
+      return numero;
+    }
+    document.getElementById("numeros").innerHTML = numerosPrimos;
+  </script>-->
+    <!--<script>
+    var cantidad = 100, j = 2, primos = [];
+    for(; j < cantidad; j++) {
+    primo(j);
+    primos.push(j);
+        // console.log(i);
+
+    }
+    function primo(j) {
+      for (var i = 2; i < j ; i++) {
+      // console.log(i);
+        if (j % i == 0) {
+            return false;
+        }
+      }
+      // primos.push(j);
+    }
+           console.log(primos);
+  </script> -->
+  <!--<script type="text/javascript">
+  const elementos = 100;
+const primos = [];
+let iteraciones = 0;
+
+for(let candidato = 2; candidato <= elementos; candidato++) {
+  let primo = true;
+  let maximoDivisor = Math.floor(Math.sqrt(candidato));
+  for(let divisor=2; divisor <= maximoDivisor; divisor++) {
+      iteraciones++;
+      if(candidato%divisor == 0) {
+          primo = !primo;
+          break;
+      }
+  }
+  if(primo) primos.push(candidato);
+}
+console.log(`iteraciones: ${iteraciones}`);
+console.log(primos);
+  </script>-->
+  </body>
+</html>

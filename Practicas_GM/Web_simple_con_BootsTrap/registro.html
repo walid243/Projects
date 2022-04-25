@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <form>
+      <div class="row">
+        <div class="input-group mb-2 col-sm-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-dniInput1">Extranjero</span>
+          </div>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-extranjeroCheck">
+            <input value="1" type="checkbox" id="ExtranjeroCheck" name="extranjeroCheck">
+          </span>
+          </div>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-dniInput2">Documento</span>
+          </div>
+          <input autocomplete="off" type="text" class="form-control" id="dniInput" name="dniInput">
+          <div class="input-group-prepend">
+          <button onclick="validarNIEDNI ($('#dniInput').val())" id="btnComprobarDNI" type="button" class="input-group-text" title="Comprobar DNI">
+          <i class="fas fa-question"></i>
+        </button>
+            </div>
+        </div>
+        <div class="input-group mb-2 col-sm-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-nssInput">NSS</span>
+          </div>
+          <input autocomplete="off" type="text" class="form-control" id="nssInput" name="nssInput">
+        </div>
+        <div class="input-group mb-2 col-sm-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="fechanacimiento">Fecha Nacimiento</span>
+          </div>
+          <input type="date" name="fecha" value="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-group mb-2 col-sm-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="nombre">Nombre</span>
+          </div>
+          <input type="text" class="form-control" id="nombreInput" name="nombreInput" value="">
+        </div>
+        <div class="input-group mb-2 col-sm-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="apellido">Apellidos</span>
+          </div>
+          <input type="text" class="form-control" id="apellidosInput" name="apellidosInput" value="">
+        </div>
+        <div class="input-group mb-2 col-sm-2">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="sexo">Sexo</span>
+
+          </div>
+          <div class="input-group-prepend">
+          <select class="form-control" name="sexoSelect" >
+            <option selected>-</option>
+              <option value="Mujer">Mujer</option>
+              <option value="Hombre">Hombre</option>
+              <option value="Otro">Otro</option>
+          </select>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+      <div class="input-group mb-2 col-sm-10">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Ocupación</span>
+        </div>
+        <input type="text" class="form-control" name="ocupacionInput" value="">
+      </div>
+
+        <div class="input-group mb-2 col-sm-2">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <input type="checkbox" class="input-group-text" id="checkNoPubli" name="checkNoPubli" value="">
+            </span>
+          </div>
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="checkNoPubli" style="font-size: 0.70em">No enviar publicidad</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12">
+          <div class="input-group-prepend">
+            <label for="observacionesArea" class="input-group-text">Observaciones</label>
+            <textarea class="form-control" id="observacionesArea" name="observacionesArea" rows="2"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-group col-sm-3">
+        </div>
+        <div class="input-group col-sm-3">
+          <div class="input-group-prepend">
+              <label class="input-group-text" for="usuarioInput">Usuario</label>
+          </div>
+            <input class="form-control" id="usuarioInput" type="text" name="usuarioInput" value="">
+        </div>
+        <div class="input-group col-sm-4">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="contraseñaInput">Contraseña</label>
+          </div>
+            <input class="form-control" type="password" name="contraseñaInput" value="">
+          <div class="input-group-prepend">
+            <button class="input-group-text" type="button" name="contraseñaRandom"><i class="fas fa-random"></i></button>
+          </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-group col-12">
+          <div class="input-group-prepend">
+              <label class="input-group-text" for="contactInput">Contactos</label>
+          </div>
+          <div class="input-group-prepend">
+            <select class="form-control" name="contactSelect">
+              <option value="e-mail"selected>E-mail</option>
+              <option value="telefono">Teléfono</option>
+              <option value="direccion">Dirección</option>
+            </select>
+          </div>
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="valorInput">Valor</label>
+          </div>
+            <input class="form-control" type="text" name="valorContact" value="">
+
+          <div class="input-group-prepend">
+              <label class="input-group-text" for="comentarioInput">Comentario</label>
+          </div>
+
+            <input class="form-control" type="text" name="valorComentario" value="">
+          <div class="input-group-prepend">
+            <button class="input-group-text" type="button" name="button"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+
+</html>
